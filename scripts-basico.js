@@ -1,7 +1,6 @@
 //O evento DOM é acionado quando todo o HTML foi completamente carregado
 
 document.addEventListener("DOMContentLoaded", function () {
-
   //TIPOS DE DADOS
   //String: Sequencia de caracter
   //Number: Numeros inteiros ou pontos flutuantes (10.4)
@@ -29,5 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     ("aluno reprovou!");
   }
-  
+
+  //--------- OPERADORES --------
+
+  // = sinal deatribuição
+  // == sinal de comparação
+  // === verifica se os dois são iguais e tem o mesmo tipo de dados
+  // != se é diferente
+  // !== se é estritamente diferente
+  // > maoior
+  // < menor
+
+  const num = "6";
+  if (num === 6) {
+    alert("é igual");
+  } else {
+    alert("O tipo de dado é diferente");
+  }
 });
