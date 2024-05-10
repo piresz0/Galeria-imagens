@@ -13,12 +13,25 @@ alert(123);
 //array:objeto especial ordenado 
 //function: bloco de codigo reutilizavel
 
-//const É usado para declarar uma variavel cujo valor é permanente
-//const teste =50;
-//console.log(teste);
+//CONST É usado para declarar uma variavel cujo valor é permanente
+const teste =50
+console.log(teste)
 
 
-//É usado para declarar uma variaveis que os vsalores podem ser retrebuidos
-//let C = 0;
+//LET É usado para declarar uma variaveis que os vsalores podem ser retrebuidos
+let C = 0
+C = 10;
+console.log(C)
 
-)}
+const notaMedia = 6;
+
+if(notaMedia >= 6) {
+    alert("aluno passou");
+}
+else if (notaMedia >= 4 && notaMedia < 6) {
+    alert("aluno quase passou")
+}
+else{("aluno reprovou!");
+}
+
+})
