@@ -1,7 +1,6 @@
 //O evento DOM é acionado quando todo o HTML foi completamente carregado
 
 document.addEventListener("DOMContentLoaded", function () {
-  alert(123);
 
   //TIPOS DE DADOS
   //String: Sequencia de caracter
@@ -30,4 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     ("aluno reprovou!");
   }
+  
 });
