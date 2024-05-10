@@ -45,4 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     alert("O tipo de dado é diferente");
   }
+
+  const professor = "Lucas";
+  if (professor == "Lucas") {
+    console.log('Sim é Lucas')
+  }else {
+    console.log('Não é Lucas')
+
+  }
 });
