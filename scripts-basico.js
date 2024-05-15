@@ -42,15 +42,66 @@ document.addEventListener("DOMContentLoaded", function () {
   const num = "6";
   if (num === 6) {
     alert("é igual");
-  } else {
+  }
+   else {
     alert("O tipo de dado é diferente");
   }
 
   const professor = "Lucas";
   if (professor == "Lucas") {
     console.log('Sim é Lucas')
-  }else {
+  } else {
     console.log('Não é Lucas')
-
   }
+
+  // -------------------------------------- / ------------------------------------------------------
+
+  // Funçãoes são blocos de codigos que podem ser chamados e reutilizados
+  //Dentro dos parenteses da função vai os parâmetros/ propriedades
+
+  function primeiraFuncao(parametro, segundoParametro) {
+
+    return parametro + segundoParametro ;// Variáveis concatenadas (+)
+  }
+
+  const parametro = "Essa é uma função com parâmetro";
+  const segundoParametro = ", agora com dois parâmetros";
+
+  console.log(primeiraFuncao(parametro, segundoParametro));
+
+  // ------------------------------ / ----------------------
+
+  // arrays em javascript são estruturas de dados que permitem armazenar uma coleção ordenada de elementos.
+
+  let primeiroArray = ['Lucas', 'João', 'Paulo', 'Marcos'];
+
+  console.log(primeiroArray[2]); //Número 2 para percorrer o array
+  // const permanente
+  // set alterar valor
+
+  //-------------------------------------------- / ------------------------------
+
+  //Os objetos são coleções NÃO ORDENADAS de pares chave-valor, onde cada valor é associado a uma chave única
+
+  let pessoa = {
+    nome: 'Maria',
+    idade: '22',
+    profissao:'Progamadora'
+  }
+  
+console.log(pessoa['profissao']);
+
+//----------------------------------------- / ---------------------
+
+const numeros =["A", "B", "C", "D"]
+
+numeros.forEach(elemento => {
+    console.log(elemento)
+})
+
+
+
+
+
+
 });
