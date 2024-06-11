@@ -1,45 +1,51 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', function(){ 
+	const baseImagens = {
+		todas: ['cidade.jpg', 'animal.jpg', 'natureza.jpg'],
+    
+		natureza: ['natureza.jpg'],
+		cidade: ['cidade.jpg'],
+		animal: ['animal.jpg'],
+	}
 
-    const baseImagens = {
-        todas : ['imagem.jpg', 'cidade.jpg', 'animal.gif', 'natureza.jpg'],
-        natureza: ['natureza.jpg'],
-        cidade: ['cidade.jpg'],
-        animal: ['animal.gif'],
-    }
+	function carregaImagens(categoria) {
+		//Selecionar elementos HTML com base em um seletor
+		const galeria = document.querySelector("#galeria-imagens");
+		galeria.innerHTML = ''; //Limpar bloco, paga tudo dentro
+		const imagens = baseImagens[categoria];
 
-    function carregaImagens(categoria){
-        // Selecionar elementos HTML com base em um seletor //
-        const galeria = document.querySelector("#galeria-imagens");
-        galeria.innerHTML = ''; //Limpar bloco, paga tudo dentro
-        const imagens = baseImagens[categoria];
+		imagens.forEach(img => {
+			galeria.innerHTML += '<div class="imagem-item" > <img src="imagens/' + img + '" />  </div>';
+		})
+	}
 
-        imagens.forEach(img => { 
-            galeria.innerHTML += '<div> <img src="imagens/'+img +'"/> </div>';
-        })
+	function ordenaImagens(ordem) {
 
-    }
+		const imagens = Array.from(document.querySelectorAll("#galeria-imagens .imagem-item"));
 
-    carregaImagens('todas');
-
-
-
-    //Evento de clique
-    document.body.addEventListener('click', function (event) {
-        //Acessa a lista de classe de onde clicou e procura pela classe botao0categoria
-        if (event.target.classList.contains('botao-categoria')){
-
-const categoria = event.target.dataset.categoria
+		imagens.sort((a, b) => {
+			const nameA = a.querySelector('img').getAttribute('alt');
+			const nameB = b.querySelector('img').getAttribute('alt');
+		})
 
 
-
-            //alert(categoria);
-
-            carregaImagens(categoria);
+	}
 
 
-        }
+	// Evento de clique
+	document.body.addEventListener('click', function (event) {
+		if (event.target.classList.contains('botao-categoria')) {
+			const categoria = event.target.dataset.categoria;
+			carregaImagens(categoria);
+		}
+		if (event.target.classList.contains('botao-ordenar')) {
+			const ordem = event.target.dataset.ordem;
+			ordenaImagens(ordem);
+		}
+	})
 
-    })
 
-  })
+
+	carregaImagens('todas');
+
+})
