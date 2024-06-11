@@ -1,51 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-	const baseImagens = {
-		todas: ['cidade.jpg', 'animal.jpg', 'natureza.jpg'],
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link 
+         rel='stylesheet' 
+        type='text/css' 
+        media='screen' 
+        href='style.css'
+        />
+        <script src="scripts.js"></script>
+</head>
+<body>
     
-		natureza: ['natureza.jpg'],
-		cidade: ['cidade.jpg'],
-		animal: ['animal.jpg'],
-	}
+    <header>
+        <div><h1>Galeria Imagens</h1></div>
 
-	function carregaImagens(categoria) {
-		//Selecionar elementos HTML com base em um seletor
-		const galeria = document.querySelector("#galeria-imagens");
-		galeria.innerHTML = ''; //Limpar bloco, paga tudo dentro
-		const imagens = baseImagens[categoria];
+        <div id="box-ordenar">
+            <button class="botao-ordenar" data-ordem="asc">Ordem A-Z</button>
+            <button class="botao-ordenar" data-ordem="asc">Ordem Z-A</button>
+        </div>
 
-		imagens.forEach(img => {
-			galeria.innerHTML += '<div class="imagem-item" > <img src="imagens/' + img + '" />  </div>';
-		})
-	}
+        <div id="box-categorias">
 
-	function ordenaImagens(ordem) {
+            <button class="botao-categoria" data-categoria="todas">Todas</button>
+            <button class="botao-categoria"  data-categoria="natureza">Natureza</button>
+            <button class="botao-categoria" data-categoria="cidade">Cidade</button>
+            <button class="botao-categoria" data-categoria="animal">Animal</button>
+        </div>
 
-		const imagens = Array.from(document.querySelectorAll("#galeria-imagens .imagem-item"));
+    </header>
 
-		imagens.sort((a, b) => {
-			const nameA = a.querySelector('img').getAttribute('alt');
-			const nameB = b.querySelector('img').getAttribute('alt');
-		})
+    <main id="galeria-imagens"></main>
+        <!-- Imagens serão carregados dinâmicamnete -->
+    <footer></footer>
 
-
-	}
-
-
-	// Evento de clique
-	document.body.addEventListener('click', function (event) {
-		if (event.target.classList.contains('botao-categoria')) {
-			const categoria = event.target.dataset.categoria;
-			carregaImagens(categoria);
-		}
-		if (event.target.classList.contains('botao-ordenar')) {
-			const ordem = event.target.dataset.ordem;
-			ordenaImagens(ordem);
-		}
-	})
-
-
-
-	carregaImagens('todas');
-
-})
+</body>
+</html>
